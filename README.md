@@ -4,14 +4,17 @@
 
 ## Table of contents
 
-- [General info](#general-info)
-- [Screenshots](#screenshots)
-- [Technologies](#technologies)
-- [Setup](#setup)
-- [Features](#features)
-- [Status](#status)
-- [Inspiration](#inspiration)
-- [Contact](#contact)
+- [Image gallery](#image-gallery)
+  - [Table of contents](#table-of-contents)
+  - [General info](#general-info)
+  - [Screenshots](#screenshots)
+  - [Technologies](#technologies)
+  - [Setup](#setup)
+  - [Code Examples](#code-examples)
+  - [Features](#features)
+  - [Status](#status)
+  - [Inspiration](#inspiration)
+  - [Contact](#contact)
 
 ## General info
 
@@ -20,7 +23,7 @@
 
 ## Screenshots
 
-![Example screenshot]()
+![screenshot](./assets/stopwatch-Screen.png)
 
 ## Technologies
 
@@ -36,7 +39,24 @@ clone the repo and start using the stop watch.
 ## Code Examples
 
 ```js
+export const updateTime = (data) => {
+	data.milliseconds += 10;
+	if (data.milliseconds === 1000) {
+		data.milliseconds = 0;
+		data.seconds += 1;
+	}
 
+	if (data.seconds === 60) {
+		data.seconds = 0;
+		data.minutes += 1;
+	}
+
+	if (data.minutes === 60) {
+		data.minutes = 0;
+	}
+
+	return data;
+};
 ```
 
 ## Features
@@ -54,8 +74,10 @@ To-do list:
 
 ## Status
 
-Project is: _in progress_
+Project is: _finished_
 
 ## Inspiration
 
 ## Contact
+
+- [Emrah](https://github.com/emrahhko)
